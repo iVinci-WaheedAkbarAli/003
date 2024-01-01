@@ -1,7 +1,13 @@
+import { CardHeader, Text } from "@chakra-ui/react";
+
 const Header = () => {
-    return(
-        <h1>TODO List</h1>
-    )
-}
+  return (
+    <CardHeader bg="green">
+      <Text as="h1" fontSize="2xl" fontWeight="bold">
+        TODO List
+      </Text>
+    </CardHeader>
+  );
+};
 
 export default Header;

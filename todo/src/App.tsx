@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import "./App.css";
 import List from "./components/List";
 import Form from "./components/Form";
 import Header from "./components/Header";
+import { Card } from "@chakra-ui/react";
 
 function App() {
   // todoList
@@ -37,13 +37,22 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Form
-        addTodo={addTodo}
-        enteredTodo={enteredTodo}
-        setEnteredTodo={setEnteredTodo}
-      />
-      <List todos={todos} deleteTodo={deleteTodo} />
+      <Card
+        boxShadow="lg"
+        p={20}
+        rounded="lg"
+        bg="white"
+        margin="0 auto"
+        width="50%"
+      >
+        <Header />
+        <Form
+          addTodo={addTodo}
+          enteredTodo={enteredTodo}
+          setEnteredTodo={setEnteredTodo}
+        />
+        <List todos={todos} deleteTodo={deleteTodo} />
+      </Card>
     </>
   );
 }

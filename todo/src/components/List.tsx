@@ -8,14 +8,20 @@ type ListProps = {
 const List: React.FC<ListProps> = ({ todos, deleteTodo }) => {
   return (
     <div>
-      {todos.map((todo: { id: number; content: string }) => {
-        return (
-          <div key={todo.id}>
-            <button onClick={() => deleteTodo(todo.id)}>完了</button>
-            <span>{todo.content}</span>
-          </div>
-        );
-      })}
+      <table>
+        {todos.map((todo: { id: number; content: string }) => {
+          return (
+            <div key={todo.id}>
+              <td>
+                <span>{todo.content}</span>
+              </td>
+              <td>
+                <button onClick={() => deleteTodo(todo.id)}>完了</button>
+              </td>
+            </div>
+          );
+        })}
+      </table>
     </div>
   );
 };

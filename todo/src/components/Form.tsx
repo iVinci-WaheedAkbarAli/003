@@ -1,4 +1,5 @@
 import React from "react";
+import { CardBody, Input } from "@chakra-ui/react";
 
 type FormProps = {
   addTodo: (e: React.FormEvent) => void;
@@ -12,14 +13,18 @@ const Form: React.FC<FormProps> = ({
   setEnteredTodo,
 }) => {
   return (
-    <form onSubmit={addTodo}>
-      <input
-        type="text"
-        value={enteredTodo}
-        onChange={(e) => setEnteredTodo(e.target.value)}
-      />
-      <button type="submit">追加</button>
-    </form>
+    <CardBody>
+      <form onSubmit={addTodo}>
+        <Input
+          borderColor="black"
+          placeholder="タスク名"
+          type="text"
+          value={enteredTodo}
+          onChange={(e) => setEnteredTodo(e.target.value)}
+        />
+        <button type="submit">追加</button>
+      </form>
+    </CardBody>
   );
 };
 
