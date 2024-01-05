@@ -4,7 +4,7 @@ import { CardBody, Input } from "@chakra-ui/react";
 type FormProps = {
   addTodo: (e: React.FormEvent) => void;
   enteredTodo: string;
-  setEnteredTodo: React.Dispatch<React.SetStateAction<string>>;
+  setEnteredTodo: (x: string) => void;
 };
 
 const Form: React.FC<FormProps> = ({

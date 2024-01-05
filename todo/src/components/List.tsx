@@ -1,7 +1,8 @@
 import React from "react";
+import Todo from "./Todo";
 
 type ListProps = {
-  todos: { id: number; content: string }[];
+  todos: Todo[];
   deleteTodo: (id: number) => void;
 };
 
@@ -9,7 +10,7 @@ const List: React.FC<ListProps> = ({ todos, deleteTodo }) => {
   return (
     <div>
       <table>
-        {todos.map((todo: { id: number; content: string }) => {
+        {todos.map((todo: Todo) => {
           return (
             <div key={todo.id}>
               <td>

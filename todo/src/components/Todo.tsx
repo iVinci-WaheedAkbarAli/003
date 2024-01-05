@@ -1,17 +1,21 @@
 import React from "react";
 import { useState } from "react";
-import List from "./components/List";
-import Form from "./components/Form";
-import Header from "./components/Header";
+import List from "./List";
+import Form from "./Form";
+import Header from "./Header";
 import { Card } from "@chakra-ui/react";
 
+type Todo = {
+  id: number;
+  content: string;
+};
 const Todo = () => {
   // todoList
-  const [todos, setTodos] = useState<{ id: number; content: string }[]>([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
   // inputに入力した内容
-  const [enteredTodo, setEnteredTodo] = useState<string>("");
+  const [enteredTodo, setEnteredTodo] = useState("");
   // todoList更新
-  const createTodo = (todo: { id: number; content: string }) => {
+  const createTodo = (todo: Todo) => {
     setTodos([...todos, todo]);
   };
   // todo削除
